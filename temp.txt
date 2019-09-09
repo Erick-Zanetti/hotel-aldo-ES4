@@ -1,0 +1,4 @@
+Sala
+  id
+  numeroPoltronas
+  numeroSala

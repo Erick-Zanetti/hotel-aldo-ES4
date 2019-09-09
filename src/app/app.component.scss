@@ -1,0 +1,30 @@
+.mat-drawer-container {
+  height: 100%;
+}
+.mat-sidenav-content {
+  overflow: hidden;
+}
+.mat-sidenav {
+  width: 306px;
+  padding: 16px;
+}
+.item-menu {
+  margin: 8px 0;
+  border-radius: 0 50px 50px 0;
+  cursor: pointer;
+  width: 100%;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.16);
+  }
+  span {
+    margin-left: 8px;
+  }
+}
+.all-content {
+  overflow: auto;
+  margin: 32px;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 16px;
+  min-height: calc(100% - 162px);
+}

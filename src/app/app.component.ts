@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'cinema';
+  public itensMenu = [
+    { nome: 'Categoria', icone: 'category', link: 'categoria' },
+    { nome: 'Apartamentos', icone: 'king_bed', link: 'apartamento' }
+  ]
 }

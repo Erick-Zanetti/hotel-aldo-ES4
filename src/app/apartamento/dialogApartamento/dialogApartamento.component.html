@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>{{data ? 'Editar Apartamento' + data.id : 'Cadastro de Apartamento'}}</h1>
+<div mat-dialog-content>
+  <div fxLayout="row wrap" fxLayoutGap="16px grid" [formGroup]="form">
+    <div fxFlex="50">
+      <mat-form-field appearance="outline">
+        <mat-label>Localizador</mat-label>
+        <input matInput placeholder="Localizador" formControlName="localizador">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50">
+      <mat-form-field appearance="outline">
+        <mat-label>Categoria</mat-label>
+        <input placeholder="Categoria" matInput formControlName="idCategoria" [matAutocomplete]="autoCategoria">
+        <mat-autocomplete #autoCategoria="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option.nome}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="end stretch">
+    <button fxFlex="100px" mat-button color="warn"  (click)="onNoClick()" cdkFocusInitial>Cancelar</button>
+    <button fxFlex="100px" mat-stroked-button color="primary" (click)="salvar()">Salvar</button>
+  </div>
+</div>

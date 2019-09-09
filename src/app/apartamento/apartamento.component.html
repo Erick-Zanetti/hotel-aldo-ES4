@@ -1,0 +1,31 @@
+<h1>Apartamento</h1>
+<div fxLayout="row">
+  <mat-form-field appearance="outline" class="filter-table">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+  <button mat-icon-button class="btn-add" (click)="openDialog()"><mat-icon>add</mat-icon></button>
+</div>
+<mat-table [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="id">
+    <mat-header-cell mat-sort-header *matHeaderCellDef> ID </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="localizador">
+    <mat-header-cell mat-sort-header *matHeaderCellDef> Localizador </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.localizador}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="categoria">
+    <mat-header-cell mat-sort-header *matHeaderCellDef> Categoria </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{showCatNome(element.idCategoria)}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="acoes">
+    <mat-header-cell mat-sort-header *matHeaderCellDef></mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <button mat-icon-button (click)="openDialog(element)"><mat-icon>edit</mat-icon></button>
+      <button mat-icon-button (click)="deleteItem(element.id)"><mat-icon>delete</mat-icon></button>
+    </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
