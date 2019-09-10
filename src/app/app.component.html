@@ -1,7 +1,7 @@
 <mat-sidenav-container>
   <mat-sidenav [mode]="'over'" #sidenav>
     <div fxLayout="row" fxLayoutAlign="start center">
-      <div fxFlex>Cineminha</div>
+      <div fxFlex>Hotelzin</div>
       <button fxFlex="40px" mat-icon-button (click)="sidenav.toggle()"><mat-icon>arrow_back</mat-icon></button>
     </div>
     <mat-divider></mat-divider>
@@ -10,13 +10,17 @@
         <mat-icon>{{item.icone}}</mat-icon>
         <span>{{item.nome}}</span>
       </button>
+      <button mat-button class="item-menu" (click)="sidenav.toggle()" fxLayoutAlign="start center" (click)="sair()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Sair</span>
+      </button>
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
       <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>local_movies</mat-icon></button>
       <button mat-button [routerLink]="['']">
-        Cineminha
+        Hotelzin
       </button>
     </mat-toolbar>
     <div class="all-content">

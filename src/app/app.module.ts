@@ -8,6 +8,8 @@ import { CategoriaModule } from './categoria/categoria.module';
 import { ApartamentoModule } from './apartamento/apartamento.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { LoginModule } from './login/login.module';
+import { RoutesInterceptor } from './interceptor/routes.interceptor';
 
 @NgModule({
    declarations: [
@@ -18,12 +20,13 @@ import { DashboardModule } from './dashboard/dashboard.module';
       BrowserModule,
       DashboardModule,
       CategoriaModule,
+      LoginModule,
       ApartamentoModule,
       MaterialModule,
       BrowserAnimationsModule,
       AppRoutingModule
    ],
-   providers: [],
+   providers: [RoutesInterceptor],
    bootstrap: [
       AppComponent
    ]

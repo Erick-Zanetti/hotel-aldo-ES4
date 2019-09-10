@@ -1,0 +1,26 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex="304px">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid" class="principal" [formGroup]="form">
+      <div fxFlex="100">
+        <h1>Login</h1>
+      </div>
+      <div fxFlex="100">
+        <mat-form-field appearance="outline">
+          <mat-label>Usuário</mat-label>
+          <input matInput placeholder="Usuário" formControlName="user">
+          <mat-hint>Dica: 1</mat-hint>
+        </mat-form-field>
+      </div>
+      <div fxFlex="100">
+        <mat-form-field appearance="outline">
+          <mat-label>Senha</mat-label>
+          <input matInput type="password" placeholder="Senha" formControlName="password">
+          <mat-hint>Dica: 1</mat-hint>
+        </mat-form-field>
+      </div>
+      <div fxFlex="100" fxLayoutAlign="end">
+        <button mat-stroked-button color="primary" (click)="logar()" [disabled]="form.invalid">Logar</button>
+      </div>
+    </div>
+  </div>
+</div>
